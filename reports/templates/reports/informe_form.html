@@ -6,9 +6,7 @@
 
     <form method="post" id="informeForm" data-satimages-url="{% url 'ajax_load_satimages' %}" novalidate>
       {% csrf_token %}
-
-        {{ form|crispy }}
-
+      {{ form|crispy }}
       <button type="submit" >Save</button>
     </form>
   
