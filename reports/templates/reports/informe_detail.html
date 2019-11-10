@@ -6,36 +6,36 @@
 
 {% block content %}
     <div class ="row">
-        <div class="col-sm-8 offset-sm-2">
-            <table class="table table-borderless   w-auto">
+        <div class="offset-sm-1 table-responsive">   
+            <table class="table  w-auto">
                 <tbody>
-                    <tr> <td>Informe Code </td> <td> {{ informe.informe_code }} </td> </tr>
-                    <tr> <td>Informe Title </td> <td> {{ informe.title }} </td> </tr>
-                    <tr> <td>Event DMEVA Code </td> <td> {{ informe.event.dmeva_code }} </td> </tr>
-                    <tr> <td>Satelital Imagen 1 </td> <td> Satelital Imagen 2 </td> </tr>
-                    <tr> <td><img src="{{ informe.satimage1.image.url }}" alt="SatImage1" width="200" height="100"> </td> 
-                        <td> <img src="{{ informe.satimage2.image.url }}" alt="SatImage2" width="200" height="100"> </td> </tr>
+                    <tr > <td style="width: 30%" >Código de informe </td> <td style="width: 70%"> {{ informe.informe_code }} </td> </tr>
+                    <tr > <td style="width: 30%" >Título del informe </td> <td style="width: 70%"> {{ informe.title }} </td> </tr>
+                    <tr > <td style="width: 30%" >DMEVA del evento </td> <td style="width: 70%"> {{ informe.event.dmeva_code }} </td> </tr>
+                    <tr > <td style="width: 30%" >Fecha </td> <td style="width: 70%"> {{ informe.fecha }} </td> </tr>
+                    <tr > <td style="width: 30%" >Mapa </td> <td class="pt-4" style="width: 70%"><img src="{{ informe.event.mapa.url }}" alt="SatImage1" width="200" height="100"> </td> 
                 </tbody>
             </table> 
         </div>
     </div>
 
-    <div class ="row">
-      <div class="col-sm-8 offset-sm-2">
+
+    <div class ="row mt-4">
+      <div class="offset-sm-1">
         <table class="table table-sm table-bordered table-striped  w-auto">
             <thead>
-                <th>Area Code</th>
+                <th>Código </th>
                 <th>Provincia</th>
-                <th>Canton</th>
+                <th>Cantón</th>
                 <th>Parroquia</th>
                 <th>Superficie</th>
-                <th>Hectarea</th>
-                <th>Percentage</th>
+                <th>Hectárea</th>
+                <th>Porcentaje</th>
             </thead>
             <tbody>
                 {% for area in areaset %}
                     <tr>
-                        <td>{{ area.location }} </td>
+                        <td>{{ area.location.location_code }} </td>
                         <td>{{ area.location.province }}</td>
                         <td>{{ area.location.canton }}</td>
                         <td>{{ area.location.parroquia }}</td>
@@ -49,18 +49,38 @@
       </div>
     </div> 
 
-    <div class ="row">
-        <div class="col-sm-8 offset-sm-2">
-            <table class="table table-borderless  w-auto">
+    <div class ="row mt-4">
+        <div class="offset-sm-1 table-responsive">   
+            <table class="table  table-borderless  w-auto">
                 <tbody>
-                    <tr>
-                        <td><a href="{% url 'informe_update' informe.id %}" class="btn btn-primary "> Update Informe </a> </td>
-                        <td><a href="{% url 'informe_delete' informe.id %}" class="btn btn-secondary "> Delete Informe </a> </td>
-                    </tr>
-                </tbody> 
+                    <tr > <td style="width:30%"> Grafico </td> <td style="width:70%" ><img src="{{ informe.event.grafico.url }}" alt="SatImage1" width="200" height="100"> </td> </tr>
+                </tbody>
             </table> 
-        </div> 
+        </div>
     </div>
+
+    <div class ="row"> 
+        <div class="offset-sm-1 table-responsive"> 
+            <table class="table table-sm table-borderless   w-auto">
+
+                <tbody>
+                    <tr><td colspan="3"><hr></td> </tr>
+                    <tr > <td class="pt-4 " colspan="2">Satelital Imagen 1 </td> <td class="pt-4" colspan="2"> Satelital Imagen 2 </td> </tr>
+                    <tr> <td width="40%"><img src="{{ informe.satimage1.image.url }}" alt="SatImage1" width="200" height="100"> </td> <td width="10%"></td>
+                        <td width="40%"> <img src="{{ informe.satimage2.image.url }}" alt="SatImage2" width="200" height="100"> </td> </tr>
+                    <tr> <td class="pt-2">Fuente: {{ informe.satimage1.fuente }}</td> <td></td> <td class="pt-2">Fuente: {{ informe.satimage1.fuente }}</td>   </tr>
+                    <tr > <td >Banda: {{ informe.satimage1.banda }}</td>  <td></td> <td>Banda: {{ informe.satimage1.banda }}</td> </tr>
+                    <tr> <td>Fecha:  {{ informe.satimage1.fecha }}</td> <td></td> <td>Fecha:  {{ informe.satimage1.fecha }}</td> </tr>
+                    <tr ><td ></td></tr>
+                    <tr ><td ></td></tr>
+                    <td><a href="{% url 'informe_update' informe.id %}" class="btn btn-outline-primary "> Modificar Informe </a> </td>
+                    <td></td>
+                    <td><a href="{% url 'informe_delete' informe.id %}" class="btn btn-outline-danger "> Eliminar Informe</a> </td>
+                </tbody>
+            </table> 
+        </div>
+    </div>
+
 {% endblock content %}
 
 
