@@ -1,5 +1,13 @@
+How to load csv file in sqlite
+
+전체흐름 검토 
+
 중간 Table 컬럼 크기 조정
 최상단 공간 주기
 
+사진 Download 
+Dummy text 입력
+load fixture
+fixture load.txt 카피 
 
 deploy 
