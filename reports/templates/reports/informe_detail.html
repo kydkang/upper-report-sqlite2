@@ -29,20 +29,33 @@
         </div>
     </div>
 
-
-    <div class="card text-center">
-        <div class="card-header">
-           <h6 class="mb-0">Mapa de Ubicación</h6>
+    <div class ="row mt-5">
+        <div class="table-responsive">
+          <table class="table table-sm table-bordered">
+              <thead class="py-3"><th colspan="3" class="py-3">Mapa de Ubicación</th></thead>
+              <tbody>
+                    <tr>
+                        <th style="width:15%" class="align-middle text-center">Provincia</th> 
+                        <td class="align-middle text-center">{{ informe.event.location.province }}</td> 
+                        <td rowspan="3" class="text-center"> <img src="{{ informe.event.mapa.url }}"  alt="SatImage1" width="300" height="200"> </td>
+                    </tr>
+                    <tr>
+                        <th style="width:15%" class="align-middle text-center">Cantón</th> 
+                        <td class="align-middle text-center">{{ informe.event.location.canton }}</td> 
+                    </tr>
+                    <tr>
+                        <th style="width:15%" class="align-middle text-center">Parroquia</th> 
+                        <td class="align-middle text-center">{{ informe.event.location.parroquia }}</td> 
+                    </tr>
+              </tbody>
+          </table>
         </div>
-        <div class="card-body">
-            <img src="{{ informe.event.mapa.url }}" class="mx-auto" alt="SatImage1" width="300" height="200">
-        </div>
-    </div>
+      </div> 
 
     <div class ="row mt-5">
       <div class="table-responsive">
-        <table class="table table-sm table-bordered table-striped  ">
-            <thead><th colspan="7">Superficie Estimada</th></thead>
+        <table class="table table-sm table-bordered">
+            <thead><th colspan="7" class="py-3">Superficie Estimada</th></thead>
             <thead>
                 <th style="width:10%" class="text-center">Código </th>
                 <th style="width:15%" class="text-center">Provincia</th>

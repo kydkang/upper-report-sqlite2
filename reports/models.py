@@ -4,6 +4,7 @@ from django.urls import reverse
 class Event(models.Model): 
     dmeva_code  = models.CharField(max_length=20) 
     dmeva_fecha = models.DateField()
+    location    = models.OneToOneField('Location', on_delete=models.SET_NULL, null=True, verbose_name='Ubicación') 
     mapa        = models.ImageField(upload_to='mapa/', blank=True, verbose_name='Mapa de Ubicación')     ### models.PolygonField(upload_to='mapa/')
     grafico     = models.ImageField(upload_to='grafico/', blank=True, verbose_name='Superficie Grafico')
     def __str__(self): 
@@ -26,14 +27,13 @@ class SatImage(models.Model):
     fuente      = models.CharField(max_length=50)
     banda       = models.CharField(max_length=50)
     fecha       = models.DateField()
-    # antes       = models.BooleanField()
     image       = models.ImageField(upload_to='satimages', verbose_name='Imagen')  
     def __str__(self): 
         return str(self.event) + " " + str(self.fuente) + " " + str(self.banda)    
 
 class Area(models.Model):   
     event       = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Evento')
-    location    = models.ForeignKey('Location', on_delete=models.CASCADE, verbose_name='Localización')  
+    location    = models.ForeignKey('Location', on_delete=models.CASCADE, verbose_name='Ubicación')  
     superficie  = models.DecimalField(max_digits=8, decimal_places=2)
     hectarea    = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Hectáreas')
     percentage  = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Porcentaje')
@@ -50,13 +50,13 @@ class Area(models.Model):
         super(Area, self).save(*args, **kwargs)
 
     def __str__(self): 
-        return str(self.id)
+        return str(self.event) + " " + str(self.location) 
 
 class Location(models.Model):  
-    location_code  = models.CharField(max_length=6, primary_key=True, verbose_name='Localización Código') 
-    province   = models.CharField(max_length=50)
-    canton      = models.CharField(max_length=50)
-    parroquia   = models.CharField(max_length=50)
+    location_code  = models.CharField(max_length=6, primary_key=True, verbose_name='Código') 
+    province    = models.CharField(max_length=50, verbose_name='Provincia')
+    canton      = models.CharField(max_length=50, verbose_name='Cantón')
+    parroquia   = models.CharField(max_length=50, verbose_name='Parroquia')
     def __str__(self): 
         return self.location_code
 

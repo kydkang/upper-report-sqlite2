@@ -1,90 +1,200 @@
 [
 {
-    "model": "reports.event",
-    "pk": 1,
-    "fields": {
-        "dmeva_code": "eventone",
-        "dmeva_fecha": "2019-10-14",
-        "mapa": "mapa/93.Quito\uad11\uace0\uc0ac\uc9c4_l1xNKTx.jpeg",
-        "grafico": "grafico/temp_1562280668537.1757242620_Wrq4pk7.jpeg"
-    }
+  "model": "reports.event",
+  "pk": 3,
+  "fields": {
+    "dmeva_code": "OADS-CA-M-09",
+    "dmeva_fecha": "2019-10-06",
+    "location": "010101",
+    "mapa": "mapa/mapa1.jpg",
+    "grafico": "grafico/mapa2.jpg"
+  }
 },
 {
-    "model": "reports.event",
-    "pk": 2,
-    "fields": {
-        "dmeva_code": "eventtwo",
-        "dmeva_fecha": "2019-10-14",
-        "mapa": "mapa/temp_1562280668544.1757242620.jpeg",
-        "grafico": "grafico/\uac15\uc601\ub3c84_Eo6pPtM.jpg"
-    }
+  "model": "reports.event",
+  "pk": 4,
+  "fields": {
+    "dmeva_code": "ABCD-EF-G-77",
+    "dmeva_fecha": "2019-09-21",
+    "location": "123456",
+    "mapa": "mapa/mapa3.jpeg",
+    "grafico": "grafico/mapa4.png"
+  }
 },
 {
-    "model": "reports.informe",
-    "pk": 1,
-    "fields": {
-        "informe_code": "11111111",
-        "event": 2,
-        "satimage1": 4,
-        "satimage2": 4,
-        "title": "11111",
-        "fecha": "2019-01-01"
-    }
+  "model": "reports.informe",
+  "pk": 4,
+  "fields": {
+    "informe_code": "REC-123456",
+    "event": 3,
+    "satimage1": 6,
+    "satimage2": 5,
+    "title": "Identificaci\u00f3n de \u00c1rea Afectada por Incendio Forestal en el Cant\u00f3n Zaruma",
+    "fecha": "2019-06-08"
+  }
 },
 {
-    "model": "reports.informe",
-    "pk": 2,
-    "fields": {
-        "informe_code": "666666",
-        "event": 1,
-        "satimage1": 1,
-        "satimage2": 2,
-        "title": "6666666",
-        "fecha": "2019-01-06"
-    }
+  "model": "reports.satimage",
+  "pk": 5,
+  "fields": {
+    "event": 3,
+    "fuente": "Ortofoto SIGTIERRAS 2012",
+    "banda": "B11-B8A-B02",
+    "fecha": "2018-02-04",
+    "image": "satimages/sat1.jpg"
+  }
 },
 {
-    "model": "reports.satimage",
-    "pk": 1,
-    "fields": {
-        "event": 1,
-        "fuente": "fffff",
-        "banda": "ffffffff",
-        "fecha": "2019-10-14",
-        "image": "satimages/\uac15\uc601\ub3c82-.jpg"
-    }
+  "model": "reports.satimage",
+  "pk": 6,
+  "fields": {
+    "event": 3,
+    "fuente": "SENTINEL 2A",
+    "banda": "B22-B4A-B77",
+    "fecha": "2017-06-13",
+    "image": "satimages/sat5.jpg"
+  }
 },
 {
-    "model": "reports.satimage",
-    "pk": 2,
-    "fields": {
-        "event": 1,
-        "fuente": "gggggggggg",
-        "banda": "gggggg",
-        "fecha": "2019-10-14",
-        "image": "satimages/temp_1562280668537.1757242620_fT1atok.jpeg"
-    }
+  "model": "reports.satimage",
+  "pk": 7,
+  "fields": {
+    "event": 4,
+    "fuente": "Ortofoto SIGTIERRAS 2014",
+    "banda": "A33-A44-A55",
+    "fecha": "2014-03-11",
+    "image": "satimages/sat2.jpg"
+  }
 },
 {
-    "model": "reports.satimage",
-    "pk": 3,
-    "fields": {
-        "event": 2,
-        "fuente": "mmmmmmmm",
-        "banda": "mmmmmmm",
-        "fecha": "2019-10-14",
-        "image": "satimages/93.Quito\uad11\uace0\uc0ac\uc9c4_Sa1G3cE.jpeg"
-    }
+  "model": "reports.satimage",
+  "pk": 8,
+  "fields": {
+    "event": 4,
+    "fuente": "SENTINEL 77",
+    "banda": "Z77-D77-K77",
+    "fecha": "2015-11-11",
+    "image": "satimages/sat3.jpg"
+  }
 },
 {
-    "model": "reports.satimage",
-    "pk": 4,
-    "fields": {
-        "event": 2,
-        "fuente": ",,,,,,,,,,,,",
-        "banda": ".......",
-        "fecha": "2019-10-14",
-        "image": "satimages/\uac15\uc601\ub3c83.jpg"
-    }
+  "model": "reports.area",
+  "pk": 5,
+  "fields": {
+    "event": 3,
+    "location": "010101",
+    "superficie": "1172.70",
+    "hectarea": "33.90",
+    "percentage": "2.89"
+  }
+},
+{
+  "model": "reports.area",
+  "pk": 6,
+  "fields": {
+    "event": 3,
+    "location": "010101",
+    "superficie": "2399.00",
+    "hectarea": "36.70",
+    "percentage": "1.53"
+  }
+},
+{
+  "model": "reports.area",
+  "pk": 7,
+  "fields": {
+    "event": 3,
+    "location": "010250",
+    "superficie": "55.00",
+    "hectarea": "1522.00",
+    "percentage": "3.61"
+  }
+},
+{
+  "model": "reports.area",
+  "pk": 8,
+  "fields": {
+    "event": 4,
+    "location": "010750",
+    "superficie": "1522.00",
+    "hectarea": "93.00",
+    "percentage": "6.11"
+  }
+},
+{
+  "model": "reports.area",
+  "pk": 9,
+  "fields": {
+    "event": 4,
+    "location": "040150",
+    "superficie": "123.00",
+    "hectarea": "1239.00",
+    "percentage": "9.93"
+  }
+},
+{
+  "model": "reports.area",
+  "pk": 10,
+  "fields": {
+    "event": 3,
+    "location": "050101",
+    "superficie": "123456.00",
+    "hectarea": "2197.00",
+    "percentage": "1.78"
+  }
+},
+{
+  "model": "reports.location",
+  "pk": "010101",
+  "fields": {
+    "province": "AZUAY",
+    "canton": "CUENCA",
+    "parroquia": "BELLAVISTA"
+  }
+},
+{
+  "model": "reports.location",
+  "pk": "010250",
+  "fields": {
+    "province": "AZUAY",
+    "canton": "GIRON",
+    "parroquia": "GIRON"
+  }
+},
+{
+  "model": "reports.location",
+  "pk": "010750",
+  "fields": {
+    "province": "AZUAY",
+    "canton": "SAN FERNANDO",
+    "parroquia": "SAN FERNANDO"
+  }
+},
+{
+  "model": "reports.location",
+  "pk": "040150",
+  "fields": {
+    "province": "CHARCHI",
+    "canton": "TULCAN",
+    "parroquia": "TULCAN"
+  }
+},
+{
+  "model": "reports.location",
+  "pk": "050101",
+  "fields": {
+    "province": "COTOPAXI",
+    "canton": "LATACUNGA",
+    "parroquia": "ELOY ALFARO"
+  }
+},
+{
+  "model": "reports.location",
+  "pk": "123456",
+  "fields": {
+    "province": "12",
+    "canton": "34",
+    "parroquia": "56"
+  }
 }
 ]
