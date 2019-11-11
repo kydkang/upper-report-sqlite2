@@ -17,7 +17,7 @@ class InformeForm(forms.ModelForm):
             'satimage2': 'Imagen Satelital 2',
             'informe_code': 'Informe Code',
             'title': 'Titulo',
-            'fecha': 'Fecha',
+            'fecha': 'Fecha de Elaboración',
         }
         # help_texts = {    'name': _('Some useful help text.'),      }
         # error_messages = {       'name': {   'max_length': _("This writer's name is too long."),    },  }

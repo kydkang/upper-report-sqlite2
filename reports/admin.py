@@ -6,7 +6,12 @@ from .models import Event, Informe, SatImage, Area, Location
 admin.site.register(Event)
 # admin.site.register(Informe)  ## Informe should be created using the custom app
 
-admin.site.register(Area)
+
+class AreaAdmin(admin.ModelAdmin):
+    readonly_fields=('percentage', )
+    
+admin.site.register(Area, AreaAdmin)
+
 admin.site.register(Location)
 
 

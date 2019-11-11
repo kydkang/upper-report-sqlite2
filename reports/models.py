@@ -21,7 +21,6 @@ class Informe(models.Model):
     def get_absolute_url(self):
         return reverse('informe_detail', args=[str(self.id)])
 
-
 class SatImage(models.Model): 
     event       = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Evento')
     fuente      = models.CharField(max_length=50)
@@ -38,6 +37,17 @@ class Area(models.Model):
     superficie  = models.DecimalField(max_digits=8, decimal_places=2)
     hectarea    = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Hectáreas')
     percentage  = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Porcentaje')
+
+    def calculate(self):         ##  also need to change  ajax_calculate() function 
+        try:
+          calc_value = self.hectarea / self.superficie * 100
+        except:
+            print("An exception occurred")
+        return calc_value
+
+    def save(self, *args, **kwargs):
+        self.percentage =  self.calculate() 
+        super(Area, self).save(*args, **kwargs)
 
     def __str__(self): 
         return str(self.id)

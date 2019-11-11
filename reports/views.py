@@ -19,7 +19,18 @@ class InformeDetailView(DetailView):
         informe_selected = Informe.objects.get(id=self.kwargs['pk'])   # pk is from the url 
         areaset = Area.objects.filter(event__id=informe_selected.event.id) 
         context['areaset'] = areaset
+        superficie_total=hectarea_total=percentage_total=0
+        for area in areaset:
+            superficie_total += area.superficie
+            hectarea_total += area.hectarea 
+            percentage_total += area.percentage 
+        if len(areaset): 
+            percentage_average = percentage_total / len(areaset)
+        context['superficie_total'] = superficie_total
+        context['hectarea_total'] = hectarea_total
+        context['percentage_average'] = percentage_average
         return context
+
 
     # # Initialize attributes shared by all view methods.
     # def setup(self, request, *args, **kwargs): 
