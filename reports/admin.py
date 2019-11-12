@@ -5,7 +5,9 @@ from .models import Event, Informe, SatImage, Area, Location
 
 # admin.site.register(Informe)  ## Informe should be created using the custom app
 
-admin.site.register(Location)
+class LocationAdmin(admin.ModelAdmin):
+    ordering = ('location_code',)
+admin.site.register(Location, LocationAdmin)
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):

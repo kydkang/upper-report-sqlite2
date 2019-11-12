@@ -40,7 +40,7 @@ class Area(models.Model):
 
     def calculate(self):         ##  also need to change  ajax_calculate() function 
         try:
-          calc_value = self.hectarea / self.superficie * 100
+          calc_value = float(self.hectarea) / float(self.superficie) * 100
         except:
             print("An exception occurred")
         return calc_value
