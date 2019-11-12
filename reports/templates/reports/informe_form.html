@@ -9,7 +9,7 @@
       {{ form | crispy }}
       <button type="submit" class="btn btn-outline-primary btn-custom mt-3">Guardar</button>
     </form>
-  
+
     <script>
       $("#id_event").change(function () {               // $ is a shortcut for jQuery
         var url = $("#informeForm").attr("data-satimages-url");  // get the url of the `load_cities` view

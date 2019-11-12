@@ -15,7 +15,7 @@ class InformeForm(forms.ModelForm):
             'event': 'Evento',
             'satimage1': 'Imagen Satelital 1', 
             'satimage2': 'Imagen Satelital 2',
-            'informe_code': 'Informe Code',
+            'informe_code': 'Informe Código',
             'title': 'Titulo',
             'fecha': 'Fecha de Elaboración',
         }
