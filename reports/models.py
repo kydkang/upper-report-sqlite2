@@ -54,9 +54,9 @@ class Area(models.Model):
 
 class Location(models.Model):  
     location_code  = models.CharField(max_length=6, primary_key=True, verbose_name='Código') 
-    province    = models.CharField(max_length=50, verbose_name='Provincia')
-    canton      = models.CharField(max_length=50, verbose_name='Cantón')
-    parroquia   = models.CharField(max_length=50, verbose_name='Parroquia')
+    province    = models.CharField(max_length=50, null=True, verbose_name='Provincia')
+    canton      = models.CharField(max_length=50, null=True, verbose_name='Cantón')
+    parroquia   = models.CharField(max_length=50, null=True, verbose_name='Parroquia')
     def __str__(self): 
         return self.location_code
 
