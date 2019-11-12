@@ -51,7 +51,7 @@ class InformeUpdateForm(forms.ModelForm):
             'event': 'Evento',
             'satimage1': 'Imagen Satelital 1', 
             'satimage2': 'Imagen Satelital 2',
-            'informe_code': 'Informe Code',
+            'informe_code': 'Informe Código',
             'title': 'Titulo',
             'fecha': 'Fecha',
         }
@@ -60,7 +60,6 @@ class InformeUpdateForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['satimage1'].queryset=SatImage.objects.none()
         self.fields['satimage2'].queryset=SatImage.objects.none() 
-        print(self.data) 
         if 'event' in self.data:    ### if there are data for each field then... 
             try:
                 event_id = int(self.data.get('event'))
