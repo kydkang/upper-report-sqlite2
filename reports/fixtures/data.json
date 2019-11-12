@@ -199,5 +199,14 @@
     "canton": "LATACUNGA",
     "parroquia": "ELOY ALFARO"
   }
+},
+{
+  "model": "reports.location",
+  "pk": "123456",
+  "fields": {
+    "province": "12",
+    "canton": "34",
+    "parroquia": "56"
+  }
 }
 ]
