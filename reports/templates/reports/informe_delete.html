@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Delete post</h1>
+    <h2 class="my-4">Eliminar Informe</h2>
     <form action="" method="post">
         {% csrf_token %}
-        <p>Are you sure you want to delete "{{ object.informe_code }}"?</p>
-        <input type="submit" class="btn btn-outline-danger btn-custom mt-3" value="Confirmar" />
+        <p>¿Seguro que quieres eliminar Informe "{{ object.informe_code }}"?</p>
+        <input type="submit" class="btn btn-outline-primary btn-custom mt-3" value="Confirmar" />
         <a  href="{% url 'informe_detail' informe.id %}" class="btn btn-outline-primary btn-custom ml-4 mt-3"> Cancelar</a> 
     </form>
 {% endblock %}

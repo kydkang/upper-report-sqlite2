@@ -11,7 +11,7 @@ class Event(models.Model):
         return self.dmeva_code  
 
 class Informe(models.Model):
-    informe_code= models.CharField(max_length=20)
+    informe_code= models.CharField(max_length=20, verbose_name='Informe Código')
     event       = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL)
     satimage1   = models.ForeignKey('SatImage', null=True, on_delete=models.SET_NULL, related_name='informe1', verbose_name='Imagen Satelital 1')
     satimage2   = models.ForeignKey('SatImage', null=True, on_delete=models.SET_NULL, related_name='informe2', verbose_name='Imagen Satelital 2') 

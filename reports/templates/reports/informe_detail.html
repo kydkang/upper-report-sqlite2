@@ -5,118 +5,109 @@
 {% endblock title %}
 
 {% block content %}
-<div class="text-center mt-4" ><h3>Informe N° {{ informe.informe_code }}</h3></div>
+<div class="text-center mt-4" ><h4>Informe N° {{ informe.informe_code }}</h4></div>
 <div class="text-center mt-4" ><h5> {{ informe.title }} </h5> </div>
 
-    <div class ="row mt-4">
-        <div class="table-responsive">   
-            <table class="table">
-                <tbody>
-                    <tr > <th style="width: 30%" >FECHA DE ELABORACIÓN </th> <td class="pl-5" style="width: 70%"> {{ informe.fecha }} </td> </tr>
-                </tbody>
-            </table> 
-        </div>
-    </div>
-
-    <div class ="row mt-4">
-        <div class="table-responsive">   
-            <table class="table  ">
-                <tbody>
-                    <tr > <th style="width: 30%" >DMEVA CODIGO</td> <td class="pl-5"style="width: 70%"> {{ informe.event.dmeva_code }} </td> </tr>
-                    <tr > <th style="width: 30%" >DMEVA FECHA </th> <td class="pl-5"style="width: 70%"> {{ informe.event.dmeva_fecha }} </td> </tr>
-                </tbody>
-            </table> 
-        </div>
-    </div>
-
-    <div class ="row mt-5">
-        <div class="table-responsive">
-          <table class="table table-sm table-bordered">
-              <thead class="py-3"><th colspan="3" class="py-3">Mapa de Ubicación</th></thead>
-              <tbody>
-                    <tr>
-                        <th style="width:15%" class="align-middle text-center">Provincia</th> 
-                        <td class="align-middle text-center">{{ informe.event.location.province }}</td> 
-                        <td rowspan="3" class="text-center"> <img src="{{ informe.event.mapa.url }}"  alt="SatImage1" width="300" height="200"> </td>
-                    </tr>
-                    <tr>
-                        <th style="width:15%" class="align-middle text-center">Cantón</th> 
-                        <td class="align-middle text-center">{{ informe.event.location.canton }}</td> 
-                    </tr>
-                    <tr>
-                        <th style="width:15%" class="align-middle text-center">Parroquia</th> 
-                        <td class="align-middle text-center">{{ informe.event.location.parroquia }}</td> 
-                    </tr>
-              </tbody>
-          </table>
-        </div>
-      </div> 
-
-    <div class ="row mt-5">
-      <div class="table-responsive">
-        <table class="table table-sm table-bordered">
-            <thead><th colspan="7" class="py-3">Superficie Estimada</th></thead>
-            <thead>
-                <th style="width:10%" class="text-center">Código </th>
-                <th style="width:15%" class="text-center">Provincia</th>
-                <th style="width:15%" class="text-center">Cantón</th>
-                <th style="width:15%" class="text-center">Parroquia</th>
-                <th style="width:15%" class="text-center">Superficie</th>
-                <th style="width:15%" class="text-center">Hectárea</th>
-                <th style="width:15%" class="text-center">Porcentaje</th>
-            </thead>
+<div class ="row mt-5">
+    <div class="table-responsive">   
+        <table class="table  ">
             <tbody>
-                {% for area in areaset %}
-                    <tr>
-                        <td style="width:10%" class="text-center">{{ area.location.location_code }} </td>
-                        <td style="width:15%" class="text-center">{{ area.location.province }}</td>
-                        <td style="width:15%" class="text-center">{{ area.location.canton }}</td>
-                        <td style="width:15%" class="text-center">{{ area.location.parroquia }}</td>
-                        <td style="width:15%" class="text-center">{{ area.superficie|localize}}</td>
-                        <td style="width:15%" class="text-center">{{ area.hectarea|localize }}</td>
-                        <td style="width:15%" class="text-center">{{ area.percentage|localize }}</td>
-                    </tr>
-                {% endfor %}
+                <tr > <th style="width: 30%" >Fecha de elaboración </th> <td class="pl-5" style="width: 70%"> {{ informe.fecha }} </td> </tr>
+                <tr > <th style="width: 30%" >DMEVA código</td> <td class="pl-5"style="width: 70%"> {{ informe.event.dmeva_code }} </td> </tr>
+                <tr > <th style="width: 30%" >DMEVA fecha </th> <td class="pl-5"style="width: 70%"> {{ informe.event.dmeva_fecha }} </td> </tr>
+            </tbody>
+        </table> 
+    </div>
+</div>
+
+<div class ="row mt-5">
+    <div class="table-responsive">
+        <table class="table table-sm table-bordered">
+            <thead class="py-3"><th colspan="3" class="py-3">Mapa de ubicación</th></thead>
+            <tbody>
                 <tr>
-                    <td style="width:10%" class="text-center">Total </td>
-                    <td style="width:15%" class="text-center"></td>
-                    <td style="width:15%" class="text-center"></td>
-                    <td style="width:15%" class="text-center"></td>
-                    <td style="width:15%" class="text-center">{{ superficie_total|localize }}</td>
-                    <td style="width:15%" class="text-center">{{ hectarea_total|localize }}</td>
-                    <td style="width:15%" class="text-center">{{ percentage_average|floatformat:'2'|localize }}</td>
+                    <th style="width:15%" class="align-middle text-center">Provincia</th> 
+                    <td class="align-middle text-center">{{ informe.event.location.province }}</td> 
+                    <td rowspan="3" class="text-center"> <img src="{{ informe.event.mapa.url }}"  alt="SatImage1" width="300" height="200"> </td>
                 </tr>
-                <tr > <td style="width:10%"> Grafico </td> <td colspan="6" align="center" valign="middle"><img src="{{ informe.event.grafico.url }}" alt="SatImage1" width="300" height="200"> </td> </tr>
+                <tr>
+                    <th style="width:15%" class="align-middle text-center">Cantón</th> 
+                    <td class="align-middle text-center">{{ informe.event.location.canton }}</td> 
+                </tr>
+                <tr>
+                    <th style="width:15%" class="align-middle text-center">Parroquia</th> 
+                    <td class="align-middle text-center">{{ informe.event.location.parroquia }}</td> 
+                </tr>
             </tbody>
         </table>
-      </div>
+    </div>
     </div> 
 
-
-    <div class ="row mt-5">
-        <div class="table-responsive">
-            <table class="table table-sm table-bordered table-striped  ">
-                <thead><th colspan="4">IMAGEN DE AFECTACIÓN</th></thead>
-                <thead>
-                    <th colspan="2" class="text-center">ANTES DEL EVENTO </th>
-                    <th colspan="2" class="text-center">DESPUES DEL EVENTO </th>
-                </thead>
-                <tbody>
-                    <tr > <td colspan="2" align="center" valign="middle"><img src="{{ informe.satimage1.image.url }}" alt="SatImage1" width="300" height="200"> </td>
-                          <td colspan="2" align="center" valign="middle"><img src="{{ informe.satimage2.image.url }}" alt="SatImage1" width="300" height="200"> </td> 
-                    </tr>
-                    <tr><td class="pt-2">Fuente</td> <td>{{ informe.satimage1.fuente }}</td>  <td class="pt-2">Fuente</td> <td>{{ informe.satimage1.fuente }}</td>   </tr>
-                    <tr><td>Banda</td>               <td>{{ informe.satimage1.banda }}</td>   <td>Banda</td>               <td>{{ informe.satimage1.banda }}</td> </tr>
-                    <tr><td>Fecha</td>               <td>{{ informe.satimage1.fecha }}</td>    <td>Fecha</td>              <td>{{ informe.satimage1.fecha }}</td> </tr>
-                </tbody>
-            </table>
-        </div>
-        </div> 
-
-    <div class="row mt-5 mb-5 no-print "> 
-       <div class="mr-4"> <a  href="{% url 'informe_update' informe.id %}" class="btn btn-outline-primary"> Modificar Informe </a> </div>
-        <a  href="{% url 'informe_delete' informe.id %}" class="btn btn-outline-danger "> Eliminar Informe</a> 
+<div class ="row mt-5">
+    <div class="table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead><th colspan="7" class="py-3">Superficie estimada</th></thead>
+        <thead>
+            <th style="width:10%" class="text-center">Código </th>
+            <th style="width:15%" class="text-center">Provincia</th>
+            <th style="width:15%" class="text-center">Cantón</th>
+            <th style="width:15%" class="text-center">Parroquia</th>
+            <th style="width:15%" class="text-center">Superficie</th>
+            <th style="width:15%" class="text-center">Hectárea</th>
+            <th style="width:15%" class="text-center">Porcentaje</th>
+        </thead>
+        <tbody>
+            {% for area in areaset %}
+                <tr>
+                    <td style="width:10%" class="text-center">{{ area.location.location_code }} </td>
+                    <td style="width:15%" class="text-center">{{ area.location.province }}</td>
+                    <td style="width:15%" class="text-center">{{ area.location.canton }}</td>
+                    <td style="width:15%" class="text-center">{{ area.location.parroquia }}</td>
+                    <td style="width:15%" class="text-center">{{ area.superficie|localize}}</td>
+                    <td style="width:15%" class="text-center">{{ area.hectarea|localize }}</td>
+                    <td style="width:15%" class="text-center">{{ area.percentage|localize }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td style="width:10%" class="text-center">Total </td>
+                <td style="width:15%" class="text-center"></td>
+                <td style="width:15%" class="text-center"></td>
+                <td style="width:15%" class="text-center"></td>
+                <td style="width:15%" class="text-center">{{ superficie_total|localize }}</td>
+                <td style="width:15%" class="text-center">{{ hectarea_total|localize }}</td>
+                <td style="width:15%" class="text-center">{{ percentage_average|floatformat:'2'|localize }}</td>
+            </tr>
+            <tr > <td style="width:10%"> Grafico </td> <td colspan="6" align="center" valign="middle"><img src="{{ informe.event.grafico.url }}" alt="SatImage1" width="300" height="200"> </td> </tr>
+        </tbody>
+    </table>
     </div>
+</div> 
+
+
+<div class ="row mt-5">
+    <div class="table-responsive">
+        <table class="table table-sm table-bordered">
+            <thead><th colspan="4"  class="py-3">Imagen de afectación</th></thead>
+            <thead>
+                <th colspan="2" class="text-center">Antes del evento </th>
+                <th colspan="2" class="text-center">Despues del evento </th>
+            </thead>
+            <tbody>
+                <tr > <td colspan="2" align="center" valign="middle"><img src="{{ informe.satimage1.image.url }}" alt="SatImage1" width="300" height="200"> </td>
+                        <td colspan="2" align="center" valign="middle"><img src="{{ informe.satimage2.image.url }}" alt="SatImage1" width="300" height="200"> </td> 
+                </tr>
+                <tr><td class="pt-2">Fuente</td> <td>{{ informe.satimage1.fuente }}</td>  <td class="pt-2">Fuente</td> <td>{{ informe.satimage1.fuente }}</td>   </tr>
+                <tr><td>Banda</td>               <td>{{ informe.satimage1.banda }}</td>   <td>Banda</td>               <td>{{ informe.satimage1.banda }}</td> </tr>
+                <tr><td>Fecha</td>               <td>{{ informe.satimage1.fecha }}</td>    <td>Fecha</td>              <td>{{ informe.satimage1.fecha }}</td> </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
+
+<div class="row mt-5 mb-5 no-print "> 
+    <div class="mr-4"> <a  href="{% url 'informe_update' informe.id %}" class="btn btn-outline-primary"> Modificar Informe </a> </div>
+    <a  href="{% url 'informe_delete' informe.id %}" class="btn btn-outline-danger "> Eliminar Informe</a> 
+</div>
 
 {% endblock content %}
 

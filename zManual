@@ -1,20 +1,22 @@
 
-To create Informe, 
+To set up, 
 
-1. Load Location data (code, province, canton, parroquia). 
-  ==> Importing a CSV file into sqlite db    
+Load Location data (code, province, canton, parroquia). 
+  ==> Importing a CSV file into the Location table of sqlite db    
   [[ Each row of the CSV file should have the format of  code,province,canton,parroquia ]]
+  [[ For example,  050101,COTOPAXI,LATACUNGA,ELOY ALFARO ]]
     a. Install and open SQLite Studio (or any SQLite tools) 
     b. Tools > Import
     c. Choose the database and table that you want to import data > Next
     d. Choose 'CSV' as the data source type
     e. Choose the CSV file in the 'Input file' field
     f. Choose ',(comma)' as the 'Field separator' field > Finish
+    
 
-2. In admin
-    - create Event data
-    - create SatImage data (selecting the event related)
-    - create (affected) Area data  (selecting the event related)
+To generate a new report, 
 
-Now you can create a new Informe from the homepage
-    - create Informe 
+1. In admin, create Event data
+2. In admin, create two SatImage data (selecting the event related)
+3. In admin, create (affected) Area data  (selecting the event related)
+4. Open the homepage and click "New Informe" and fill in the fields. 
+

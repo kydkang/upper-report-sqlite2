@@ -7,7 +7,7 @@
     "dmeva_fecha": "2019-10-06",
     "location": "010101",
     "mapa": "mapa/mapa1.jpg",
-    "grafico": "grafico/mapa2.jpg"
+    "grafico": "grafico/graph456.png"
   }
 },
 {
@@ -16,9 +16,21 @@
   "fields": {
     "dmeva_code": "ABCD-EF-G-77",
     "dmeva_fecha": "2019-09-21",
-    "location": "123456",
+    "location": "010750",
     "mapa": "mapa/mapa3.jpeg",
-    "grafico": "grafico/mapa4.png"
+    "grafico": "grafico/graph123.png"
+  }
+},
+{
+  "model": "reports.informe",
+  "pk": 1,
+  "fields": {
+    "informe_code": "COD-234-XYZ",
+    "event": 4,
+    "satimage1": 7,
+    "satimage2": 8,
+    "title": "Identificaci\u00f3n de \u00c1rea Afectada por Incendio Forestal en el Cant\u00f3n CUENCA",
+    "fecha": "2019-03-15"
   }
 },
 {
@@ -30,7 +42,7 @@
     "satimage1": 6,
     "satimage2": 5,
     "title": "Identificaci\u00f3n de \u00c1rea Afectada por Incendio Forestal en el Cant\u00f3n Zaruma",
-    "fecha": "2019-06-08"
+    "fecha": "2019-06-09"
   }
 },
 {
@@ -186,15 +198,6 @@
     "province": "COTOPAXI",
     "canton": "LATACUNGA",
     "parroquia": "ELOY ALFARO"
-  }
-},
-{
-  "model": "reports.location",
-  "pk": "123456",
-  "fields": {
-    "province": "12",
-    "canton": "34",
-    "parroquia": "56"
   }
 }
 ]
