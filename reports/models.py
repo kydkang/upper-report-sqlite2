@@ -11,10 +11,10 @@ class Event(models.Model):
         return self.dmeva_code  
 
 class Informe(models.Model):
-    informe_code= models.CharField(max_length=20, verbose_name='Informe Código')
+    informe_code= models.CharField(max_length=20)
     event       = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL)
-    satimage1   = models.ForeignKey('SatImage', null=True, on_delete=models.SET_NULL, related_name='informe1', verbose_name='Imagen Satelital 1')
-    satimage2   = models.ForeignKey('SatImage', null=True, on_delete=models.SET_NULL, related_name='informe2', verbose_name='Imagen Satelital 2') 
+    satimage1   = models.ForeignKey('SatImage', null=True, on_delete=models.SET_NULL, related_name='informe1')
+    satimage2   = models.ForeignKey('SatImage', null=True, on_delete=models.SET_NULL, related_name='informe2') 
     title       = models.CharField(max_length=200, verbose_name='Titulo')
     fecha       = models.DateField()
     def __str__(self): 
