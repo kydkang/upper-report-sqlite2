@@ -1,4 +1,15 @@
 
+The attached file is the sqlite-version of the reporting app. 
+
+To generate a new report, the necessary steps are: 
+1. In admin, create Event data
+2. In admin, create two SatImage data (selecting the event related)
+3. In admin, create (affected) Area data  (selecting the event related)
+4. Go to the homepage and click "New Informe"
+5. Fill in the fields and save
+
+From now on, I will concentrated on Index management system,  
+as it is rather difficult to switch back and forth between two apps.  
 
 
 투두텍스트삭제
