@@ -58,7 +58,7 @@ class Location(models.Model):
     canton      = models.CharField(max_length=50, null=True, verbose_name='Cantón')
     parroquia   = models.CharField(max_length=50, null=True, verbose_name='Parroquia')
     def __str__(self): 
-        return self.location_code
+        return self.location_code + " " + self.province + " " + self.canton + " " + self.parroquia
 
 # class Provincia(models.Model): 
 #     name        = models.CharField(max_length=30)

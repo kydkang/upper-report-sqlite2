@@ -1,7 +1,7 @@
 
 The attached file is the sqlite-version of the reporting app. 
 
-To generate a new report, the necessary steps are: 
+To generate a new report, the necessary steps are: (admin password is admin)
 1. In admin, create Event data
 2. In admin, create two SatImage data (selecting the event related)
 3. In admin, create (affected) Area data  (selecting the event related)
