@@ -15,5 +15,6 @@ as it is rather difficult to switch back and forth between two apps.
 투두텍스트삭제
 zManual삭제
 .깃파일삭제
+fixture .93 파일 삭제 
 db.sqlite3까지 포함해서 Zip파일 만들기
 
