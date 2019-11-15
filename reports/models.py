@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.core.exceptions import ValidationError
 
 class Event(models.Model): 
     dmeva_code  = models.CharField(max_length=20) 
@@ -34,15 +35,16 @@ class SatImage(models.Model):
 class Area(models.Model):   
     event       = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Evento')
     location    = models.ForeignKey('Location', on_delete=models.CASCADE, verbose_name='Ubicación')  
-    superficie  = models.DecimalField(max_digits=8, decimal_places=2)
     hectarea    = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Hectáreas')
+    superficie  = models.DecimalField(max_digits=8, decimal_places=2)
     percentage  = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Porcentaje')
 
+    def clean(self):
+        if float(self.hectarea) >= float(self.superficie) : 
+            raise ValidationError({'hectarea': 'hectárea no puede ser mayor que superficie.'})
+    
     def calculate(self):         ##  also need to change  ajax_calculate() function 
-        try:
-          calc_value = float(self.hectarea) / float(self.superficie) * 100
-        except:
-            print("An exception occurred")
+        calc_value = float(self.hectarea) / float(self.superficie) * 100
         return calc_value
 
     def save(self, *args, **kwargs):

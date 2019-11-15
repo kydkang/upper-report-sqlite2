@@ -16,7 +16,7 @@ class EventAdmin(admin.ModelAdmin):
 class AreaAdmin(admin.ModelAdmin):
     readonly_fields=('percentage', )
     raw_id_fields = ["location"]
-    list_display = ['event', 'location']
+    list_display = ['event', 'location', 'hectarea', 'superficie', 'percentage']
     ordering = ['event', 'location'] 
 admin.site.register(Area, AreaAdmin)
 
